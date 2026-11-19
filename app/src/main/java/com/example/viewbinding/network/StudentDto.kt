@@ -3,20 +3,18 @@ package com.example.viewbinding.network
 import com.example.viewbinding.model.Student
 
 data class StudentDto(
-    val fullName: String,
-    val studentCode: String,
-    val email: String,
-    val gpa: Double,
-    val major: String? = "Công Nghệ Thông Tin"
+    val id: Int,
+    val name: String,
+    val email: String
 )
 
 fun StudentDto.toEntity(): Student {
     return Student(
         id = 0,
-        fullName = fullName,
-        studentCode = studentCode,
+        fullName = name,
+        studentCode = "2011900$id",
         email = email,
-        gpa = gpa,
-        major = major ?: "Công Nghệ Thông Tin"
+        gpa = 3.50,
+        major = "Công Nghệ Thông Tin"
     )
 }
